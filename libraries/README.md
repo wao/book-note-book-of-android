@@ -76,4 +76,17 @@ Gson gson = gb.create();
 def t = gson.fromJson("\"2017-11-02T07:03:04.806Z\"", OffsetDateTime.class);
 ```
 
-## java.time.*
+## Java 8 Time api
+
+### Basic Concept
+
+There are two categories in new time api: timeline point and interval.
+
+Timeline point is a point a timeline, you can think it likes a timestamp. And interval is duration between two timeline point.
+
+For Timeline point, two interfaces define its abilities: `Temporal` and `TemporalAccessor`. The latter is readonly interface of timepoint which is inherited by the previous one. 
+
+`TemporalAccessor` define `get`, `getLong`, `query` and `isSupport`.
+`Temporal` add `minus`, `plus`, `with` and `until`.
+
+TemproalAdjuster define the basic features of duration.
